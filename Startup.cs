@@ -29,9 +29,9 @@ namespace dojodachi_proj
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSession();
             app.UseMvc();
             app.UseStaticFiles();
-            app.UseSession();
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");

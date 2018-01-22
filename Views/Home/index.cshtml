@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Fullness: @ViewBag.hector.fullness Happiness: @ViewBag.hector.happiness Meals: @ViewBag.hector.meals Energy: @ViewBag.hector.energy</h2>
+    <p><img src="~/images/Tamagotchi.gif" alt="tama"></p>
+    @{
+        if(ViewBag.hector.fullness >= 100 && ViewBag.hector.happiness >= 100 && ViewBag.hector.energy >= 100)
+        {
+            <a href="reset"><button>Reset</button></a>
+        }
+        else if(ViewBag.hector.fullness < 1 || ViewBag.hector.happiness < 1)
+        {
+            <a href="reset"><button>Reset</button></a>
+        }
+        else
+        {
+            <a href="feed"><button>Feed</button></a>
+            <a href="play"><button>Play</button></a>
+            <a href="work"><button>Work</button></a>
+            <a href="sleep"><button>Sleep</button></a>
+        }
+    }
+    <p>@ViewBag.hector.message</p>
+</body>
+
+</html>
